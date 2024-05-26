@@ -1,0 +1,133 @@
+body {
+    font-family: Josefin Slab, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f2f2f2;
+    display: flex;
+    font-weight: 100; /* Normal weight */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; /* Center content vertically */
+    height: 100vh;
+}
+
+header {
+    width: 100%;
+    background-color: #848484;
+    color: #fff;
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo-container {
+    margin-left: 20px;
+}
+
+.logo {
+    max-height: 40px; /* Maintain aspect ratio by setting max height */
+    height: auto;     /* Ensure auto height */
+    width: auto;      /* Ensure auto width */
+}
+
+nav {
+    margin-right: 20px;
+}
+
+.menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.menu li {
+    margin: 0 15px;
+}
+
+.menu li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.slideshow-container {
+    max-width: 1000px;
+    position: relative;
+    margin-top: 80px; /* Adjusting for fixed header */
+    width: 100%;
+    display: flex;
+    justify-content: center; /* Center slides horizontally */
+    align-items: center;     /* Center slides vertically */
+    height: calc(100vh - 80px); /* Full height minus header height */
+}
+
+.mySlides {
+    display: none;
+    text-align: center; /* Center the content inside the slide */
+}
+
+img {
+    vertical-align: middle;
+    border-radius: 10px;
+    width: 100%;
+}
+
+/* Fading animation */
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@keyframes fade {
+    from {opacity: .8}
+    to {opacity: 1}
+}
+
+
+/* Default styles for the slideshow container */
+.slideshow-container {
+    max-width: 1000px;
+    position: relative;
+    margin-top: 80px; /* Adjusting for fixed header */
+    width: 100%;
+    display: flex;
+    justify-content: center; /* Center slides horizontally */
+    align-items: center;     /* Center slides vertically */
+    height: calc(100vh - 160px); /* Full height minus header and footer heights */
+    z-index: 0; /* Ensure it's behind the progress elements */
+}
+
+/* Default styles for images within the slideshow */
+.mySlides img {
+    vertical-align: middle;
+    border-radius: 10px;
+    width: 100%;
+    height: auto; /* Ensure aspect ratio is maintained */
+    object-fit: cover; /* Maintain aspect ratio without distortion */
+}
+
+/* Media query for devices with iPhone screen ratio */
+@media only screen and (max-aspect-ratio: 675/1080) {
+    .slideshow-container {
+        height: 80vh; /* Set height to 80% of viewport height */
+    }
+
+    .mySlides img {
+        width: 100%; /* Make image fill the container width */
+        height: calc(80vh * 0.8); /* Calculate height to maintain aspect ratio and occupy 80% of the screen height */
+    }
+}
+
+
+
+.small-image {
+    position: fixed; /* Fixed position to keep it in place */
+    bottom: 20px; /* Adjust as needed */
+    right: 20px; /* Adjust as needed */
+    z-index: 1000; /* Ensure it's above other content */
+}
